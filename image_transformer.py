@@ -1,11 +1,15 @@
 import streamlit as st
 import cv2
 import numpy as np
+import os
+
+
 
 st.title("Image Transformation App")
 
 # Upload an image
 image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+image_path = os.path.join(os.getcwd(), "images", "my_image.jpg")
 
 if image is not None:
     st.image(image, caption="Uploaded Image", use_column_width=True)
